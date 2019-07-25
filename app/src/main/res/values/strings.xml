@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Designing</string>
+
+    <string-array name="metal_status">
+        <item>Alert</item>
+        <item>Depress</item>
+        <item>Stupor</item>
+        <item>Coma</item>
+    </string-array>
+    <string-array name="pulse_status">
+        <item>Strong</item>
+        <item>Weak</item>
+        <item>Deficit</item>
+        <item>ect.</item>
+    </string-array>
 </resources>
