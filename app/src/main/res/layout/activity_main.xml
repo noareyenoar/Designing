@@ -10,8 +10,24 @@ tools:context=".MainActivity">
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="230dp"
+            android:gravity="center"
+            android:text="Treatment and Further Plan"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText6" />
+
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/editText6"
             android:layout_width="358dp"
             android:layout_height="300dp"
             android:layout_marginStart="28dp"
@@ -28,6 +44,25 @@ tools:context=".MainActivity">
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="358dp"
+            android:layout_height="300dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
+            android:ellipsize="none"
+            android:ems="35"
+            android:gravity="start"
+            android:inputType="textUri|textShortMessage|textLongMessage|textMultiLine|textPersonName"
+            android:maxLines="20"
+            android:minLines="1"
+            android:singleLine="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
         <TextView
             android:id="@+id/textView9"
             android:layout_width="152dp"
@@ -40,6 +75,7 @@ tools:context=".MainActivity">
             android:textColor="#000000"
             android:textSize="15dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editText12" />
 
@@ -113,6 +149,7 @@ tools:context=".MainActivity">
             android:textColor="#000000"
             android:textSize="15dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editText11" />
 
@@ -299,13 +336,33 @@ tools:context=".MainActivity">
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@mipmap/ic_launcher_round" />
 
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button"
-            tools:layout_editor_absoluteX="174dp"
-            tools:layout_editor_absoluteY="1198dp" />
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="111dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="271dp"
+            android:gravity="center"
+            android:text="Diagnosis"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText2" />
+
+        <EditText
+            android:id="@+id/editText13"
+            android:layout_width="358dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="24dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
