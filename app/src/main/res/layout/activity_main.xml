@@ -11,6 +11,39 @@ tools:context=".MainActivity">
         android:layout_height="match_parent">
 
         <EditText
+            android:id="@+id/editText2"
+            android:layout_width="358dp"
+            android:layout_height="300dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
+            android:ellipsize="none"
+            android:ems="35"
+            android:gravity="start"
+            android:inputType="textUri|textShortMessage|textLongMessage|textMultiLine|textPersonName"
+            android:maxLines="20"
+            android:minLines="1"
+            android:singleLine="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="152dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="231dp"
+            android:gravity="center"
+            android:text="Physical Examination"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText12" />
+
+        <EditText
             android:id="@+id/editText12"
             android:layout_width="358dp"
             android:layout_height="42dp"
@@ -28,7 +61,7 @@ tools:context=".MainActivity">
             android:layout_width="358dp"
             android:layout_height="300dp"
             android:layout_marginStart="28dp"
-            android:layout_marginTop="7dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="25dp"
             android:ellipsize="none"
             android:ems="35"
@@ -39,7 +72,7 @@ tools:context=".MainActivity">
             android:singleLine="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView16" />
+            app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
         <TextView
             android:id="@+id/textView15"
@@ -69,19 +102,19 @@ tools:context=".MainActivity">
             app:layout_constraintTop_toBottomOf="@+id/pulse_spinner" />
 
         <TextView
-            android:id="@+id/textView16"
+            android:id="@+id/textView"
             android:layout_width="152dp"
             android:layout_height="30dp"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="38dp"
-            android:layout_marginEnd="231dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="230dp"
             android:gravity="center"
-            android:text="Physical Examination"
+            android:text="Laboratory result"
             android:textColor="#000000"
             android:textSize="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText12" />
+            app:layout_constraintTop_toBottomOf="@+id/editText11" />
 
         <TextView
             android:id="@+id/textView13"
@@ -271,8 +304,8 @@ tools:context=".MainActivity">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Button"
-            tools:layout_editor_absoluteX="234dp"
-            tools:layout_editor_absoluteY="1054dp" />
+            tools:layout_editor_absoluteX="174dp"
+            tools:layout_editor_absoluteY="1198dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
