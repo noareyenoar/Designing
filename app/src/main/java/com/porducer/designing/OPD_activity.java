@@ -6,7 +6,7 @@ import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class OPD_activity extends AppCompatActivity {
 
     Spinner Mental_status,Pulse_strength;
 
