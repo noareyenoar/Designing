@@ -13,4 +13,10 @@
         <item>Deficit</item>
         <item>ect.</item>
     </string-array>
+    <string-array name="hos_service">
+        <item>Petshop</item>
+        <item>Veterinary</item>
+        <item>Hotal</item>
+        <item>Grooming</item>
+    </string-array>
 </resources>
