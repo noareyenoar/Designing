@@ -14,9 +14,16 @@
         <item>ect.</item>
     </string-array>
     <string-array name="hos_service">
-        <item>Petshop</item>
         <item>Veterinary</item>
+        <item>Petshop</item>
         <item>Hotal</item>
         <item>Grooming</item>
+        <item>OPD</item>
+        <item>IPD</item>
+        <item>Complete Blood Count</item>
+        <item>Blood Chemistry</item>
+        <item>X-ray</item>
+        <item>Ultrasound</item>
+        <item>etc</item>
     </string-array>
 </resources>

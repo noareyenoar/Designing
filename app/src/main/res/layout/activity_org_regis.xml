@@ -1,20 +1,213 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".org_regis">
 
-    <Spinner
-        android:id="@+id/hos_service_spinner"
-        android:layout_width="393dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="148dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/hosregis_textview_service3"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="9dp"
+            android:gravity="center"
+            android:text="Special list"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toStartOf="@+id/spinner3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hosregis_textview_service2" />
+
+        <TextView
+            android:id="@+id/hosregis_textview_service2"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="9dp"
+            android:gravity="center"
+            android:text="Species"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toStartOf="@+id/spinner"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/opd_textview_weight4" />
+
+        <EditText
+            android:id="@+id/opd_edittext_weight4"
+            android:layout_width="273dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="27dp"
+            android:ems="10"
+            android:inputType="number"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/opd_textview_weight4"
+            app:layout_constraintTop_toBottomOf="@+id/hos_service_spinner" />
+
+        <TextView
+            android:id="@+id/opd_textview_weight4"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="19dp"
+            android:layout_marginEnd="9dp"
+            android:gravity="center"
+            android:text="Other service"
+            android:textColor="#000000"
+            android:textSize="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/opd_edittext_weight4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hosregis_textview_service" />
+
+        <TextView
+            android:id="@+id/hosregis_textview_service"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="9dp"
+            android:gravity="center"
+            android:text="Service"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toStartOf="@+id/hos_service_spinner"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hosregis_button_location" />
+
+        <EditText
+            android:id="@+id/opd_edittext_weight2"
+            android:layout_width="122dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="27dp"
+            android:layout_marginEnd="15dp"
+            android:ems="10"
+            android:inputType="number"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toStartOf="@+id/hosregis_imageview_logo"
+            app:layout_constraintStart_toEndOf="@+id/hosregis_textview_tel"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <TextView
+            android:id="@+id/hosregis_textview_tel"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:text="Tel"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toStartOf="@+id/opd_edittext_weight2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="87dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:text="Enterprise"
+            android:textColor="#000000"
+            android:textSize="18dp"
+            app:layout_constraintEnd_toStartOf="@+id/editText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="207dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="8dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toStartOf="@+id/register_opd"
+            app:layout_constraintStart_toEndOf="@+id/textView2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/hos_service_spinner"
+            android:layout_width="276dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="27dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/hosregis_textview_service"
+            app:layout_constraintTop_toBottomOf="@+id/hosregis_button_location" />
+
+        <ImageView
+            android:id="@+id/hosregis_imageview_logo"
+            android:layout_width="139dp"
+            android:layout_height="109dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/opd_edittext_weight2"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:srcCompat="@drawable/add_logo" />
+
+        <Button
+            android:id="@+id/hosregis_button_location"
+            android:layout_width="356dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:text="Location"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hosregis_imageview_logo" />
+
+        <Button
+            android:id="@+id/hosregis_button_bussinesshour"
+            android:layout_width="194dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="40dp"
+            android:text="Bussines Hour"
+            app:layout_constraintBottom_toTopOf="@+id/hosregis_button_location"
+            app:layout_constraintEnd_toStartOf="@+id/hosregis_imageview_logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/opd_edittext_weight2" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="265dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="35dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/hosregis_textview_service2"
+            app:layout_constraintTop_toBottomOf="@+id/opd_edittext_weight4" />
+
+        <Spinner
+            android:id="@+id/spinner3"
+            android:layout_width="265dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="35dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/hosregis_textview_service3"
+            app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
