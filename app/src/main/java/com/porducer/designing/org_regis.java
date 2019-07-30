@@ -1,6 +1,7 @@
 package com.porducer.designing;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
 import android.widget.Spinner;
@@ -24,5 +25,8 @@ public class org_regis extends AppCompatActivity {
         //Construct the hospital custom spinner
         hospital_spinner_adapter hos_spinner_adapter = new hospital_spinner_adapter(this, hos_service_list);
         hos_service_spinner.setAdapter(hos_spinner_adapter);
+
+        //Fragment
+
     }
 }

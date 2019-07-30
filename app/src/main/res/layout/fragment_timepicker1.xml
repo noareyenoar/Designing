@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <EditText
+            android:id="@+id/fragmenttimepick_edittext_hourfrom"
+            android:layout_width="172dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="14dp"
+            android:ems="10"
+            android:inputType="time"
+            app:layout_constraintEnd_toStartOf="@+id/fragmenttimepick_edittext_hourto"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragmenttimepick_spinner_dayfrom" />
+
+        <Spinner
+            android:id="@+id/fragmenttimepick_spinner_dayfrom"
+            android:layout_width="172dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="14dp"
+            app:layout_constraintEnd_toStartOf="@+id/fragmenttimepick_spinner_dayto"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragmenttimepick_textview_from" />
+
+        <TextView
+            android:id="@+id/fragmenttimepick_textview_to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="96dp"
+            android:layout_marginEnd="109dp"
+            android:text="to"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/fragmenttimepick_textview_from"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/fragmenttimepick_textview_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="228dp"
+            android:text="Bussiness Time"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/fragmenttimepick_textview_from"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="82dp"
+            android:layout_marginTop="29dp"
+            android:layout_marginEnd="80dp"
+            android:text="from"
+            app:layout_constraintEnd_toStartOf="@+id/fragmenttimepick_textview_to"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragmenttimepick_textview_header" />
+
+        <Spinner
+            android:id="@+id/fragmenttimepick_spinner_dayto"
+            android:layout_width="166dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/fragmenttimepick_spinner_dayfrom"
+            app:layout_constraintTop_toBottomOf="@+id/fragmenttimepick_textview_to" />
+
+        <EditText
+            android:id="@+id/fragmenttimepick_edittext_hourto"
+            android:layout_width="172dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="30dp"
+            android:ems="10"
+            android:inputType="time"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/fragmenttimepick_edittext_hourfrom"
+            app:layout_constraintTop_toBottomOf="@+id/fragmenttimepick_spinner_dayto" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
