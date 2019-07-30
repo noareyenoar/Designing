@@ -2,6 +2,7 @@ package com.porducer.designing;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.widget.Spinner;
@@ -27,6 +28,7 @@ public class org_regis extends AppCompatActivity {
         hos_service_spinner.setAdapter(hos_spinner_adapter);
 
         //Fragment
-
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.frame_for_fragment, new fragment_bussinesshour()).commit();
     }
 }
