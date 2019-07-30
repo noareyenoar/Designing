@@ -14,75 +14,55 @@
             android:id="@+id/hosregis_textview_service3"
             android:layout_width="80dp"
             android:layout_height="30dp"
-            android:layout_marginStart="22dp"
-            android:layout_marginTop="11dp"
-            android:layout_marginEnd="9dp"
             android:gravity="center"
             android:text="Special list"
             android:textColor="#000000"
             android:textSize="15dp"
-            app:layout_constraintEnd_toStartOf="@+id/spinner3"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/hosregis_textview_service2" />
+            tools:layout_editor_absoluteX="19dp"
+            tools:layout_editor_absoluteY="462dp" />
 
         <TextView
             android:id="@+id/hosregis_textview_service2"
             android:layout_width="80dp"
             android:layout_height="30dp"
-            android:layout_marginStart="22dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="9dp"
             android:gravity="center"
             android:text="Species"
             android:textColor="#000000"
             android:textSize="15dp"
-            app:layout_constraintEnd_toStartOf="@+id/spinner"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/opd_textview_weight4" />
+            tools:layout_editor_absoluteX="19dp"
+            tools:layout_editor_absoluteY="421dp" />
 
         <EditText
             android:id="@+id/opd_edittext_weight4"
             android:layout_width="273dp"
             android:layout_height="36dp"
-            android:layout_marginStart="9dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="27dp"
             android:ems="10"
             android:inputType="number"
             android:textSize="15sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/opd_textview_weight4"
-            app:layout_constraintTop_toBottomOf="@+id/hos_service_spinner" />
+            tools:layout_editor_absoluteX="114dp"
+            tools:layout_editor_absoluteY="375dp" />
 
         <TextView
             android:id="@+id/opd_textview_weight4"
             android:layout_width="80dp"
             android:layout_height="30dp"
-            android:layout_marginStart="22dp"
-            android:layout_marginTop="19dp"
-            android:layout_marginEnd="9dp"
             android:gravity="center"
             android:text="Other service"
             android:textColor="#000000"
             android:textSize="10dp"
-            app:layout_constraintEnd_toStartOf="@+id/opd_edittext_weight4"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/hosregis_textview_service" />
+            tools:layout_editor_absoluteX="19dp"
+            tools:layout_editor_absoluteY="378dp" />
 
         <TextView
             android:id="@+id/hosregis_textview_service"
             android:layout_width="80dp"
             android:layout_height="30dp"
-            android:layout_marginStart="22dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="9dp"
             android:gravity="center"
             android:text="Service"
             android:textColor="#000000"
             android:textSize="15dp"
-            app:layout_constraintEnd_toStartOf="@+id/hos_service_spinner"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/hosregis_button_location" />
+            tools:layout_editor_absoluteX="19dp"
+            tools:layout_editor_absoluteY="329dp" />
 
         <EditText
             android:id="@+id/opd_edittext_weight2"
@@ -141,12 +121,8 @@
             android:id="@+id/hos_service_spinner"
             android:layout_width="276dp"
             android:layout_height="39dp"
-            android:layout_marginStart="9dp"
-            android:layout_marginTop="27dp"
-            android:layout_marginEnd="24dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/hosregis_textview_service"
-            app:layout_constraintTop_toBottomOf="@+id/hosregis_button_location" />
+            tools:layout_editor_absoluteX="114dp"
+            tools:layout_editor_absoluteY="326dp" />
 
         <ImageView
             android:id="@+id/hosregis_imageview_logo"
@@ -164,14 +140,10 @@
             android:id="@+id/hosregis_button_location"
             android:layout_width="356dp"
             android:layout_height="45dp"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="30dp"
             android:text="Location"
             android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/hosregis_imageview_logo" />
+            tools:layout_editor_absoluteX="25dp"
+            tools:layout_editor_absoluteY="254dp" />
 
         <Button
             android:id="@+id/hosregis_button_bussinesshour"
@@ -191,23 +163,15 @@
             android:id="@+id/spinner"
             android:layout_width="265dp"
             android:layout_height="36dp"
-            android:layout_marginStart="9dp"
-            android:layout_marginTop="9dp"
-            android:layout_marginEnd="35dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/hosregis_textview_service2"
-            app:layout_constraintTop_toBottomOf="@+id/opd_edittext_weight4" />
+            tools:layout_editor_absoluteX="114dp"
+            tools:layout_editor_absoluteY="420dp" />
 
         <Spinner
             android:id="@+id/spinner3"
             android:layout_width="265dp"
             android:layout_height="36dp"
-            android:layout_marginStart="9dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="35dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/hosregis_textview_service3"
-            app:layout_constraintTop_toBottomOf="@+id/spinner" />
+            tools:layout_editor_absoluteX="114dp"
+            tools:layout_editor_absoluteY="461dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
