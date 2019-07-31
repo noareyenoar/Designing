@@ -97,5 +97,29 @@
             app:layout_constraintStart_toEndOf="@+id/fragmenttimepick_edittext_hourfrom"
             app:layout_constraintTop_toBottomOf="@+id/fragmenttimepick_spinner_dayto" />
 
+        <Button
+            android:id="@+id/fragmenttimepick_button_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="54dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="60dp"
+            android:text="Confirm"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/fragmenttimepick_button_add"
+            app:layout_constraintTop_toBottomOf="@+id/fragmenttimepick_edittext_hourto" />
+
+        <Button
+            android:id="@+id/fragmenttimepick_button_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="50dp"
+            android:text="Add time"
+            app:layout_constraintEnd_toStartOf="@+id/fragmenttimepick_button_confirm"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragmenttimepick_edittext_hourfrom" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
