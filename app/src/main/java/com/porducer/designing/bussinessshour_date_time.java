@@ -6,6 +6,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,7 +14,7 @@ import androidx.annotation.Nullable;
 public class bussinessshour_date_time extends FrameLayout {
 
     Spinner day_from,day_to;
-    EditText hour_from,hour_to;
+    TextView hour_from,hour_to;
     public bussinessshour_date_time(@NonNull Context context) {
         super(context);
         bindobject();
@@ -36,8 +37,8 @@ public class bussinessshour_date_time extends FrameLayout {
 
     private void bindobject(){
         inflate(getContext(),R.layout.viewgroup_date_time,this);
-        hour_from = findViewById(R.id.vg_edittext_timefrom);
-        hour_to = findViewById(R.id.vg_edittext_timeto);
+        hour_from = findViewById(R.id.vg_textview_timefrom);
+        hour_to = findViewById(R.id.vg_textview_timeto);
         day_from = findViewById(R.id.vg_spinner_dayfrom);
         day_to = findViewById(R.id.vg_spinner_dayto);
 
