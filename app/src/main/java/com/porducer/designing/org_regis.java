@@ -50,6 +50,6 @@ public class org_regis extends AppCompatActivity implements CallBackInterface {
 
     @Override
     public void callbackMethod() {
-
+        //TODO : Things to do when fragment call back
     }
 }
