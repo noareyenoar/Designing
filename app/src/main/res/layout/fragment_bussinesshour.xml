@@ -2,6 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -9,21 +10,19 @@
         android:id="@+id/fragment_constraintlayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#E407ECBE">
+        android:background="#07ECBE">
 
 
         <TextView
             android:id="@+id/fragment_textview_to"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
             android:layout_marginTop="20dp"
-            android:layout_marginEnd="50dp"
+            android:layout_marginEnd="104dp"
             android:layout_marginBottom="20dp"
             android:text="to"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/bussinessshour_date_time1"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/fragment_textview_from"
             app:layout_constraintTop_toBottomOf="@+id/fragment_button_confirm" />
 
         <TextView
@@ -44,13 +43,11 @@
             android:id="@+id/fragment_textview_from"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="45dp"
+            android:layout_marginStart="98dp"
             android:layout_marginTop="20dp"
-            android:layout_marginEnd="60dp"
             android:layout_marginBottom="20dp"
             android:text="from"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/fragment_textview_to"
+            app:layout_constraintBottom_toTopOf="@+id/bussinessshour_date_time1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/fragment_button_addtime" />
 
@@ -79,10 +76,31 @@
             app:layout_constraintTop_toBottomOf="@+id/fragment_textview_header" />
 
         <com.porducer.designing.bussinessshour_date_time
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content">
+            android:id="@+id/bussinessshour_date_time1"
+            android:layout_width="412dp"
+            android:layout_height="112dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_textview_to"></com.porducer.designing.bussinessshour_date_time>
 
-        </com.porducer.designing.bussinessshour_date_time>
+        <com.porducer.designing.bussinessshour_date_time
+            android:id="@+id/bussinessshour_date_time2"
+            android:layout_width="412dp"
+            android:layout_height="112dp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bussinessshour_date_time1"></com.porducer.designing.bussinessshour_date_time>
+
+        <com.porducer.designing.bussinessshour_date_time
+            android:id="@+id/bussinessshour_date_time3"
+            android:layout_width="412dp"
+            android:layout_height="112dp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bussinessshour_date_time2"></com.porducer.designing.bussinessshour_date_time>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

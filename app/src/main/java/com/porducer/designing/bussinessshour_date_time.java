@@ -42,9 +42,9 @@ public class bussinessshour_date_time extends FrameLayout {
         day_to = findViewById(R.id.vg_spinner_dayto);
 
         //Spinner adapter
-        /*ArrayAdapter<CharSequence> spinner_adapter_day = ArrayAdapter.createFromResource(getContext().getApplicationContext(),R.array.day, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> spinner_adapter_day = ArrayAdapter.createFromResource(getContext().getApplicationContext(),R.array.day, android.R.layout.simple_spinner_item);
         spinner_adapter_day.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         day_from.setAdapter(spinner_adapter_day);
-        day_to.setAdapter(spinner_adapter_day);*/
+        day_to.setAdapter(spinner_adapter_day);
     }
 }
