@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -22,6 +23,7 @@ public class org_regis extends AppCompatActivity implements CallBackInterface {
         setContentView(R.layout.activity_org_regis);
 
         Bussiness_hour = findViewById(R.id.hosregis_button_bussinesshour);
+
         // Spinner with CustomAdapter
         Spinner hos_service_spinner = (Spinner) findViewById(R.id.hos_service_spinner);
         String[] temp = getResources().getStringArray(R.array.hos_service);
@@ -33,16 +35,17 @@ public class org_regis extends AppCompatActivity implements CallBackInterface {
         hospital_spinner_adapter hos_spinner_adapter = new hospital_spinner_adapter(this, hos_service_list);
         hos_service_spinner.setAdapter(hos_spinner_adapter);
 
+        //OnClick listener
         Bussiness_hour.setOnClickListener(Bussiness_Hour_Clicked);
-
-
     }
 
     private View.OnClickListener Bussiness_Hour_Clicked = new View.OnClickListener() {
         public void onClick(View v) {
             //Fragment
+            fragment_bussinesshour fragment_bh = new fragment_bussinesshour();
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.frame_for_fragment, new fragment_bussinesshour()).commit();
+            ft.replace(R.id.frame_for_fragment, fragment_bh);
+            ft.commit();
             // Set Callback in fragment
             fragment_bussinesshour.setCallback(org_regis.this);
         }
@@ -50,6 +53,7 @@ public class org_regis extends AppCompatActivity implements CallBackInterface {
 
     @Override
     public void callbackMethod() {
-        //TODO : Things to do when fragment call back
+        //Test call back
+        Toast.makeText(getApplicationContext(), "Callback Online!",Toast.LENGTH_SHORT).show();
     }
 }

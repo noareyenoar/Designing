@@ -4,20 +4,19 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
+import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Spinner;
+import android.widget.FrameLayout;
 
 public class fragment_bussinesshour extends Fragment {
 
-    Spinner day_from,day_to;
-    EditText hour_from,hour_to;
+
     static CallBackInterface mcallback;
     Button Confirm;
 
@@ -28,15 +27,16 @@ public class fragment_bussinesshour extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        hour_from = view.findViewById(R.id.fragmenttimepick_edittext_hourfrom);
-        hour_to = view.findViewById(R.id.fragmenttimepick_edittext_hourto);
-        Confirm = view.findViewById(R.id.fragmenttimepick_button_confirm);
 
-        //Spinner adapter
-        String[] day = getResources().getStringArray(R.array.day);
-        ArrayAdapter<String> day_adapter = new ArrayAdapter<String>(getContext(),R.layout.fragment_bussinesshour, day);
-        day_from.setAdapter(day_adapter);
-        day_to.setAdapter(day_adapter);
+        Confirm = view.findViewById(R.id.fragment_button_confirm);
+        ConstraintLayout cLayout = view.findViewById(R.id.fragment_constraintlayout);
+
+        //Add Date&Time Layout Programatically//
+        //params.setMargins(0, 0, 0, 0);
+        bussinessshour_date_time date_time = new bussinessshour_date_time(getContext());
+        //date_time.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+
+        cLayout.addView(date_time);
 
         Confirm.setOnClickListener(Confirm_Clicked);
     }
@@ -60,4 +60,8 @@ public class fragment_bussinesshour extends Fragment {
             }
         }
     };
+
+    public void data_send(){
+        //TODO : Add data send intent to hospital register activity
+    }
 }
