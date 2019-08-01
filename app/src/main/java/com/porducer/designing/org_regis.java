@@ -63,7 +63,6 @@ public class org_regis extends AppCompatActivity implements CallBackInterface {
     public void callbackMethod(Bundle data) {
         //Test call back
         Toast.makeText(getApplicationContext(), "Callback Online!",Toast.LENGTH_SHORT).show();
-
         this.data_from_fragment_bussiness_hour = data;
         Bussiness_hour.setVisibility(0);
         Location.setVisibility(0);

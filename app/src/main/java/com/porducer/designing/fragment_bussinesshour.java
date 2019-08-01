@@ -12,12 +12,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
 import java.util.Calendar;
 
-public class fragment_bussinesshour extends Fragment implements CallBackInterface {
+public class fragment_bussinesshour extends Fragment{
 
 
     static CallBackInterface mcallback;
@@ -26,11 +27,11 @@ public class fragment_bussinesshour extends Fragment implements CallBackInterfac
     bussinessshour_date_time viewgroup1, viewgroup2, viewgroup3;
     TimePicker picker;
     TextView hour_from1, hour_to1, hour_from2, hour_to2, hour_from3, hour_to3;
+    Spinner day_from1,day_to1,day_from2,day_to2,day_from3,day_to3;
     TextView Header;
     View Clicked;
     Bundle data_from_this_fragment;
 
-    String h_from1, h_to1, h_from2, h_to2, h_from3, h_to3;
 
     //Constructor
     public fragment_bussinesshour() {
@@ -52,6 +53,7 @@ public class fragment_bussinesshour extends Fragment implements CallBackInterfac
         hour_to2 = viewgroup2.hour_to;
         hour_from3 = viewgroup3.hour_from;
         hour_to3 = viewgroup3.hour_to;
+        day_from1 = viewgroup1.day_from;
         Header = view.findViewById(R.id.fragment_textview_header);
         picker = view.findViewById(R.id.simpleTimePicker);
         timepicker_ok = view.findViewById(R.id.time_picker_ok);
@@ -84,7 +86,8 @@ public class fragment_bussinesshour extends Fragment implements CallBackInterfac
     private View.OnClickListener Confirm_Clicked = new View.OnClickListener() {
         public void onClick(View v) {
             if (mcallback != null) {
-                mcallback.callbackMethod();
+                data_packing();
+                mcallback.callbackMethod(data_from_this_fragment);
             }
         }
     };
@@ -131,13 +134,8 @@ public class fragment_bussinesshour extends Fragment implements CallBackInterfac
         }
     };
 
-
-    private void data_send(){
-        Bundle date_time_intent = new Bundle();
-
-    }
-    @Override
-    public void callbackMethod(Bundle data) {
-
+    private void data_packing(){
+        data_from_this_fragment = new Bundle();
+        data_from_this_fragment.putString("Day_from1",String.valueOf(day_from1.getSelectedItem()));
     }
 }
