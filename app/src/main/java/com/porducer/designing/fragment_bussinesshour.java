@@ -17,7 +17,7 @@ import android.widget.TimePicker;
 
 import java.util.Calendar;
 
-public class fragment_bussinesshour extends Fragment {
+public class fragment_bussinesshour extends Fragment implements CallBackInterface {
 
 
     static CallBackInterface mcallback;
@@ -28,6 +28,7 @@ public class fragment_bussinesshour extends Fragment {
     TextView hour_from1, hour_to1, hour_from2, hour_to2, hour_from3, hour_to3;
     TextView Header;
     View Clicked;
+    Bundle data_from_this_fragment;
 
     String h_from1, h_to1, h_from2, h_to2, h_from3, h_to3;
 
@@ -47,6 +48,10 @@ public class fragment_bussinesshour extends Fragment {
         viewgroup3 = view.findViewById(R.id.bussinessshour_date_time3);
         hour_from1 = viewgroup1.hour_from;
         hour_to1 = viewgroup1.hour_to;
+        hour_from2 = viewgroup2.hour_from;
+        hour_to2 = viewgroup2.hour_to;
+        hour_from3 = viewgroup3.hour_from;
+        hour_to3 = viewgroup3.hour_to;
         Header = view.findViewById(R.id.fragment_textview_header);
         picker = view.findViewById(R.id.simpleTimePicker);
         timepicker_ok = view.findViewById(R.id.time_picker_ok);
@@ -56,7 +61,11 @@ public class fragment_bussinesshour extends Fragment {
         Confirm.setOnClickListener(Confirm_Clicked);
         Add_time.setOnClickListener(Add_time_Clicked);
         hour_from1.setOnClickListener(hf_clicked);
+        hour_from2.setOnClickListener(hf_clicked);
+        hour_from3.setOnClickListener(hf_clicked);
         hour_to1.setOnClickListener(hf_clicked);
+        hour_to2.setOnClickListener(hf_clicked);
+        hour_to3.setOnClickListener(hf_clicked);
         timepicker_ok.setOnClickListener(timepicker_ok_Clicked);
     }
 
@@ -101,6 +110,7 @@ public class fragment_bussinesshour extends Fragment {
         }
     };
     private View.OnClickListener hf_clicked = new View.OnClickListener() {
+        @SuppressLint("WrongConstant")
         public void onClick(View v) {
                 picker.setVisibility(0);
                 timepicker_ok.setVisibility(0);
@@ -113,13 +123,21 @@ public class fragment_bussinesshour extends Fragment {
             timepicker_ok.setVisibility(4);
             String temp = String.valueOf(picker.getHour())+":"+String.valueOf(picker.getMinute());
             if (Clicked==hour_from1){hour_from1.setText(temp);}
-            else if (Clicked==hour_to1){hour_from1.setText(temp);}
+            else if (Clicked==hour_to1){hour_to1.setText(temp);}
+            else if (Clicked==hour_from1){hour_from2.setText(temp);}
+            else if (Clicked==hour_to2){hour_to2.setText(temp);}
+            else if (Clicked==hour_from2){hour_from2.setText(temp);}
+            else if (Clicked==hour_to3){hour_to3.setText(temp);}
         }
     };
 
 
     private void data_send(){
         Bundle date_time_intent = new Bundle();
-        //TODO Get data back to activity
+
+    }
+    @Override
+    public void callbackMethod(Bundle data) {
+
     }
 }

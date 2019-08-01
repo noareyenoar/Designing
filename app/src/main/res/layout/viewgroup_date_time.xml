@@ -79,6 +79,7 @@
             android:layout_marginTop="31dp"
             android:gravity="center"
             android:text="Time"
+            android:textColor="#0047D4"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/vg_spinner_dayfrom" />
@@ -91,6 +92,7 @@
             android:layout_marginEnd="1dp"
             android:gravity="center"
             android:text="Time"
+            android:textColor="#0047D4"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/textView17"
             app:layout_constraintTop_toBottomOf="@+id/vg_spinner_dayto" />

@@ -17,6 +17,7 @@ import java.util.ArrayList;
 public class org_regis extends AppCompatActivity implements CallBackInterface {
 
     Button Bussiness_hour,Location;
+    Bundle data_from_fragment_bussiness_hour;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,20 +48,23 @@ public class org_regis extends AppCompatActivity implements CallBackInterface {
             //Fragment
             fragment_bussinesshour fragment_bh = new fragment_bussinesshour();
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.frame_for_fragment, fragment_bh);
+            ft.add(R.id.frame_for_fragment, fragment_bh);
+            ft.addToBackStack(null);
             ft.commit();
             // Set Callback in fragment
             fragment_bussinesshour.setCallback(org_regis.this);
-            Bussiness_hour.setVisibility(4);
-            Location.setVisibility(4);
+//            Bussiness_hour.setVisibility(4);
+//            Location.setVisibility(4);
         }
     };
 
     @SuppressLint("WrongConstant")
     @Override
-    public void callbackMethod() {
+    public void callbackMethod(Bundle data) {
         //Test call back
         Toast.makeText(getApplicationContext(), "Callback Online!",Toast.LENGTH_SHORT).show();
+
+        this.data_from_fragment_bussiness_hour = data;
         Bussiness_hour.setVisibility(0);
         Location.setVisibility(0);
     }

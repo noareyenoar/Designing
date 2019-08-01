@@ -234,12 +234,13 @@
 
         <FrameLayout
             android:id="@+id/frame_for_fragment"
-            android:layout_width="382dp"
-            android:layout_height="521dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="93dp"
             android:layout_marginEnd="21dp"
             android:layout_marginBottom="434dp"
+            android:elevation="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
