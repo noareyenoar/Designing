@@ -2,26 +2,18 @@ package com.porducer.designing;
 
 import android.annotation.SuppressLint;
 import android.app.TimePickerDialog;
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
-import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.FrameLayout;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
-
-import org.w3c.dom.Text;
 
 import java.util.Calendar;
 
@@ -29,14 +21,15 @@ public class fragment_bussinesshour extends Fragment {
 
 
     static CallBackInterface mcallback;
-    Button Confirm,Add_time,B2;
+    Button Confirm, Add_time,timepicker_ok;
     int date_time_counter;
-    bussinessshour_date_time viewgroup1,viewgroup2,viewgroup3;
-    TimePickerDialog picker;
-    TextView hour_from1,hour_to1,hour_from2,hour_to2,hour_from3,hour_to3;
+    bussinessshour_date_time viewgroup1, viewgroup2, viewgroup3;
+    TimePicker picker;
+    TextView hour_from1, hour_to1, hour_from2, hour_to2, hour_from3, hour_to3;
     TextView Header;
+    View Clicked;
 
-    String h_from1,h_to1,h_from2,h_to2,h_from3,h_to3;
+    String h_from1, h_to1, h_from2, h_to2, h_from3, h_to3;
 
     //Constructor
     public fragment_bussinesshour() {
@@ -55,11 +48,16 @@ public class fragment_bussinesshour extends Fragment {
         hour_from1 = viewgroup1.hour_from;
         hour_to1 = viewgroup1.hour_to;
         Header = view.findViewById(R.id.fragment_textview_header);
+        picker = view.findViewById(R.id.simpleTimePicker);
+        timepicker_ok = view.findViewById(R.id.time_picker_ok);
+        picker.setVisibility(4);
+        timepicker_ok.setVisibility(4);
 
         Confirm.setOnClickListener(Confirm_Clicked);
         Add_time.setOnClickListener(Add_time_Clicked);
         hour_from1.setOnClickListener(hf_clicked);
         hour_to1.setOnClickListener(hf_clicked);
+        timepicker_ok.setOnClickListener(timepicker_ok_Clicked);
     }
 
     @Override
@@ -70,13 +68,13 @@ public class fragment_bussinesshour extends Fragment {
     }
 
     //Method of Setting interface call back
-    public static void setCallback(CallBackInterface callback){
-        mcallback=callback;
+    public static void setCallback(CallBackInterface callback) {
+        mcallback = callback;
     }
 
     private View.OnClickListener Confirm_Clicked = new View.OnClickListener() {
         public void onClick(View v) {
-            if(mcallback != null){
+            if (mcallback != null) {
                 mcallback.callbackMethod();
             }
         }
@@ -85,7 +83,7 @@ public class fragment_bussinesshour extends Fragment {
     private View.OnClickListener Add_time_Clicked = new View.OnClickListener() {
         @SuppressLint("WrongConstant")
         public void onClick(View v) {
-            switch (date_time_counter){
+            switch (date_time_counter) {
                 case 1:
                     viewgroup2.setVisibility(0);
                     date_time_counter++;
@@ -95,7 +93,7 @@ public class fragment_bussinesshour extends Fragment {
                     date_time_counter++;
                     break;
                 default:
-                    date_time_counter=1;
+                    date_time_counter = 1;
                     viewgroup2.setVisibility(4);
                     viewgroup3.setVisibility(4);
                     break;
@@ -104,52 +102,24 @@ public class fragment_bussinesshour extends Fragment {
     };
     private View.OnClickListener hf_clicked = new View.OnClickListener() {
         public void onClick(View v) {
-            String temp;
-            temp = onTimeSet2();
-            if (v==hour_from1){hour_from1.setText(temp);}
-            else if(v==hour_to1){hour_to1.setText(temp);}
+                picker.setVisibility(0);
+                timepicker_ok.setVisibility(0);
+                Clicked = v;
+            }
+        };
+    private View.OnClickListener timepicker_ok_Clicked = new View.OnClickListener() {
+        public void onClick(View v) {
+            picker.setVisibility(4);
+            timepicker_ok.setVisibility(4);
+            String temp = String.valueOf(picker.getHour())+":"+String.valueOf(picker.getMinute());
+            if (Clicked==hour_from1){hour_from1.setText(temp);}
+            else if (Clicked==hour_to1){hour_from1.setText(temp);}
         }
     };
+
 
     private void data_send(){
         Bundle date_time_intent = new Bundle();
         //TODO Get data back to activity
     }
-    //Create time picker graphic
-    public String onTimeSet() {
-        String temp;
-        final Integer[] hourMinute1 = new Integer[1];
-        final Integer[] hourMinute2 = new Integer[1];
-        final Calendar cldr = Calendar.getInstance();
-        int hour = cldr.get(Calendar.HOUR_OF_DAY);
-        int minutes = cldr.get(Calendar.MINUTE);
-        // time picker dialog
-        picker = new TimePickerDialog(getContext(), new TimePickerDialog.OnTimeSetListener() {
-            @Override
-            public void onTimeSet(TimePicker tp, int sHour, int sMinute) {
-                hourMinute1[0] = sHour;
-                hourMinute2[0] = sMinute;
-            }
-        }, hour, minutes, true);
-        picker.show();
-        temp = String.valueOf(hourMinute1[0]) + ":" + String.valueOf(hourMinute2[0]);
-        return temp;
-    }
-    public String onTimeSet2() {
-        String temp;
-        final Integer[] hourMinute1 = new Integer[1];
-        final Integer[] hourMinute2 = new Integer[1];
-        TimePickerDialog.OnTimeSetListener timePickerListener =
-                new TimePickerDialog.OnTimeSetListener() {
-                    @Override
-                    public void onTimeSet(TimePicker view, int selectedHour,
-                                          int selectedMinute) {
-                        hourMinute1[0] = selectedHour;
-                        hourMinute2[0] = selectedMinute;
-                    }
-                };
-        temp = String.valueOf(hourMinute1[0]) + ":" + String.valueOf(hourMinute2[0]);
-        return temp;
-    }
-
 }
