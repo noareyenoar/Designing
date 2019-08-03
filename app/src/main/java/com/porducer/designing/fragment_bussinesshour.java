@@ -15,12 +15,13 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
 public class fragment_bussinesshour extends Fragment{
 
-
+    String Defult_time;
     static CallBackInterface mcallback;
     Button Confirm, Add_time,timepicker_ok;
     int date_time_counter;
@@ -42,6 +43,8 @@ public class fragment_bussinesshour extends Fragment{
         super.onViewCreated(view, savedInstanceState);
 
         date_time_counter = 1;
+        Defult_time = getResources().getString(R.string.defult_time);
+
         Confirm = view.findViewById(R.id.fragment_button_confirm);
         Add_time = view.findViewById(R.id.fragment_button_addtime);
         viewgroup1 = view.findViewById(R.id.bussinessshour_date_time1);
@@ -54,6 +57,11 @@ public class fragment_bussinesshour extends Fragment{
         hour_from3 = viewgroup3.hour_from;
         hour_to3 = viewgroup3.hour_to;
         day_from1 = viewgroup1.day_from;
+        day_to1 = viewgroup1.day_from;
+        day_from2 = viewgroup2.day_from;
+        day_to2 = viewgroup2.day_to;
+        day_from3 = viewgroup3.day_from;
+        day_to2 = viewgroup3.day_to;
         Header = view.findViewById(R.id.fragment_textview_header);
         picker = view.findViewById(R.id.simpleTimePicker);
         timepicker_ok = view.findViewById(R.id.time_picker_ok);
@@ -135,7 +143,48 @@ public class fragment_bussinesshour extends Fragment{
     };
 
     private void data_packing(){
-        data_from_this_fragment = new Bundle();
-        data_from_this_fragment.putString("Day_from1",String.valueOf(day_from1.getSelectedItem()));
+        if (data_valid()) {
+            data_from_this_fragment = new Bundle();
+            if (date_time_counter == 1) {
+                data_from_this_fragment.putString("Day_from1", String.valueOf(day_from1.getSelectedItem()));
+                data_from_this_fragment.putString("Day_to1", String.valueOf(day_to1.getSelectedItem()));
+                data_from_this_fragment.putString("Hour_from1", String.valueOf(hour_from1.getText()));
+                data_from_this_fragment.putString("Hour_to1", String.valueOf(hour_to1.getText()));
+            }
+            if (date_time_counter == 1) {
+                data_from_this_fragment.putString("Day_from2", String.valueOf(day_from2.getSelectedItem()));
+                data_from_this_fragment.putString("Day_to2", String.valueOf(day_to2.getSelectedItem()));
+                data_from_this_fragment.putString("Hour_from2", String.valueOf(hour_from2.getText()));
+                data_from_this_fragment.putString("Hour_to2", String.valueOf(hour_to2.getText()));
+            }
+            if (date_time_counter == 1) {
+                data_from_this_fragment.putString("Day_from3", String.valueOf(day_from3.getSelectedItem()));
+                data_from_this_fragment.putString("Day_to3", String.valueOf(day_to3.getSelectedItem()));
+                data_from_this_fragment.putString("Hour_from3", String.valueOf(hour_from3.getText()));
+                data_from_this_fragment.putString("Hour_to3", String.valueOf(hour_to3.getText()));
+            }
+        } else Toast.makeText(getContext(), "Please Describe time and date before Confirm bussiness time", Toast.LENGTH_SHORT).show();
+
+    }
+
+    //Function to check "is Data Set Correctly" before send to mainhospital registration activity
+    private boolean data_valid(){
+        boolean validation = false;
+        int date_time_counter_tracker = 1;
+        if (date_time_counter<=1&&Defult_time.equals(hour_from1.getText())&&Defult_time.equals(hour_to1.getText())){
+            if (date_time_counter==date_time_counter_tracker){validation=true;}
+            else {date_time_counter_tracker=date_time_counter_tracker+1;}
+        }
+        if (date_time_counter<=2&&Defult_time.equals(hour_from2.getText())&&Defult_time.equals(hour_to2.getText())
+                &&"Monday".equals(String.valueOf(day_from2.getSelectedItem()))&&"Monday".equals(String.valueOf(day_to2.getSelectedItem()))){
+            if (date_time_counter==date_time_counter_tracker){validation=true;}
+            else {date_time_counter_tracker=date_time_counter_tracker+1;}
+        }
+        if (date_time_counter<=3&&Defult_time.equals(hour_from3.getText())&&Defult_time.equals(hour_to3.getText())
+                &&"Monday".equals(String.valueOf(day_from3.getSelectedItem()))&&"Monday".equals(String.valueOf(day_to3.getSelectedItem()))){
+            if (date_time_counter==date_time_counter_tracker){validation=true;}
+            else {validation=false;}
+        }
+        return  validation;
     }
 }
