@@ -34,7 +34,8 @@
         <item>Friday</item>
         <item>Saturday</item>
         <item>Sunday</item>
-    </string-array>>
+    </string-array>
+    >
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
