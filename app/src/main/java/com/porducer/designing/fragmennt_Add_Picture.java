@@ -58,7 +58,7 @@ public class fragmennt_Add_Picture extends Fragment {
     private View.OnClickListener Confirm_Clicked = new View.OnClickListener() {
         public void onClick(View v) {
             if (mcallback != null) {
-                mcallback.callback_from_addpic(data_from_addpic);//TODO Add data bundle to call back);
+                mcallback.callback_from_addpic(data_from_addpic);//TODO Add data bundle to call back)
             }
         }
     };
