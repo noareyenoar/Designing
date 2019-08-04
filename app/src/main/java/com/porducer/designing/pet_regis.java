@@ -14,6 +14,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import java.util.Calendar;
 import java.util.Date;
 
@@ -77,7 +79,20 @@ public class pet_regis extends AppCompatActivity {
         boolean answer = false;
         if(species.getSelectedItem().toString().equals(getResources().getString(R.string.species_defult))
         &&AnimalName.getText().equals("")&&OPD_HN.getText().equals("")){
-            answer = true;
+            if (species_other.getText().equals("")&&species.getSelectedItem().toString().equals("Other (please describe)")) {
+                if (!get_sex().equals("No sex Selected")){
+                    answer = true;
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "Please Select Animal Sex",Toast.LENGTH_SHORT).show();
+                }
+            }
+            else {
+                Toast.makeText(getApplicationContext(), "Please Insert Species",Toast.LENGTH_SHORT).show();
+            }
+        }
+        else {
+            Toast.makeText(getApplicationContext(), "Please Insert Species, Animal Name, OPD/HN Number",Toast.LENGTH_SHORT).show();
         }
         return answer;
     }
