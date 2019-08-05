@@ -121,10 +121,12 @@ public class pet_regis extends AppCompatActivity {
         //TODO : Add Image upload system
         data_from_petregis_packed.putString(tvbirthday.getText().toString(),Birthdate.getText().toString());
         if (!breed.getText().toString().equals("")){data_from_petregis_packed.putString(tvbreed.getText().toString(),breed.getText().toString());}
-        /*data_from_petregis_packed.putString();
-        data_from_petregis_packed.putString();
-        data_from_petregis_packed.putString();
-        data_from_petregis_packed.putString();
-        data_from_petregis_packed.putString();*/
+        data_from_petregis_packed.putString(tvspecies.getText().toString(),species.getSelectedItem().toString());
+        if (species.getSelectedItem().toString().equals("Other (please describe)")){data_from_petregis_packed.putString(species_other.getText().toString(),species_other.getText().toString());}
+        data_from_petregis_packed.putString(tvName.getText().toString(),AnimalName.getText().toString());
+        data_from_petregis_packed.putString(tvsex.getText().toString(),get_sex());
+        data_from_petregis_packed.putString(tvbreed.getText().toString(),breed.getText().toString());
+        data_from_petregis_packed.putString(tvcolor.getText().toString(),color.getText().toString());
+        data_from_petregis_packed.putString(tvOPD.getText().toString(),OPD_HN.getText().toString());
     }
 }
